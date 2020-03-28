@@ -1,7 +1,9 @@
 <div class="mt-5">
   <h1 class="text-center"><%= @result %></h1>
   <% if @result == "Faux, retente ta chance !" %>
-    <%= link_to "Rééssayer", movie_path(@movie.id), class:"ml-5 btn btn-danger" %>
+    <div class="text-center">
+      <%= link_to "Réessayer", movie_path(@movie.id), class:"ml-5 btn btn-danger" %>
+    </div>
   <% else %>
     <br>
     <h1 class="text-center"><%= @movie.answer %></h1>

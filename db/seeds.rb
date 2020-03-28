@@ -6,7 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+JoinUserMovie.destroy_all
 Movie.destroy_all
+User.destroy_all
 
 Movie.create(emojis: "🔕 🐏 🐏 🐏 ", answer: "Le silence des agneaux" )
 Movie.create(emojis: "👦 👧 🌂 👜 🇬🇧", answer: "Mary Poppins" )
@@ -52,5 +54,4 @@ Movie.create(emojis: " ◼️ 🦢 🩰 ", answer: "Black Swan" )
 Movie.create(emojis: " 👨‍👩‍👧‍👦 💰 🏰 🍟 ", answer: "Les Tuches" )
 Movie.create(emojis: " 🧹 👨🏼‍🏫 🧠 🗣️ ", answer: "Will Hunting" )
 Movie.create(emojis: " 🧼 🤜🏻 ", answer: "Fight Club" )
-Movie.create(emojis: " 🚶 🏃 ✈️ ", answer: "Attrape moi si tu veux" )
 Movie.create(emojis: " 🚶 🏃 ✈️ ", answer: "Attrape moi si tu veux" )
