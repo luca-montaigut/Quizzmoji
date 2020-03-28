@@ -11,7 +11,7 @@ class MoviesController < ApplicationController
   def create
     @movie = Movie.find(params[:id])
     
-    if params[:user_answer] == @movie.answer
+    if params[:user_answer].downcase.split.join == @movie.answer.downcase.split.join
       @result = "Bravo ! Effectivement c'était bien :"
     else
       @result = "Faux, retente ta chance !"
