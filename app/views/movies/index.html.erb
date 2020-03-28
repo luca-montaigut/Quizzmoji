@@ -1,0 +1,19 @@
+<h1 class="text-center my-5">Liste des films</h1>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Films</th>
+        <th>Répondre</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @movies.each do |movie| %>
+        <tr>
+          <td><%= movie.emojis %></td>
+          <td><%= link_to "Répondre", movie_path(movie.id) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  
