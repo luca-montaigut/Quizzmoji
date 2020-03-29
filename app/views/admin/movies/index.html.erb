@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="text-center">Gérer les films</h1>
+
+<%= link_to 'Nouveau film', new_admin_movie_path, class:"btn btn-primary" %>
+<br>
+<br>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Films à trouver</th>
+      <th>Réponses</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_movies.sort_by(&:created_at).each do |admin_movie| %>
+      <% if !admin_movie.is_validated %>
+        <tr>
+          <td><%= admin_movie.emojis %></td>
+          <td><%= admin_movie.answer %></td>
+          <td><%= link_to 'Show', admin_movie_path(admin_movie.id) %></td>
+          <td><%= link_to 'Edit', edit_admin_movie_path(admin_movie) %></td>
+          <td><%= link_to 'Destroy', admin_movie_path(admin_movie.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Films à trouver</th>
+      <th>Réponses</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_movies.sort_by(&:created_at).each do |admin_movie| %>
+      <% if admin_movie.is_validated %>
+        <tr>
+          <td><%= admin_movie.emojis %></td>
+          <td><%= admin_movie.answer %></td>
+          <td><%= link_to 'Show', admin_movie_path(admin_movie.id) %></td>
+          <td><%= link_to 'Edit', edit_admin_movie_path(admin_movie) %></td>
+          <td><%= link_to 'Destroy', admin_movie_path(admin_movie.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

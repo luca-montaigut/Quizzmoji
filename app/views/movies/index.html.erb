@@ -1,15 +1,17 @@
-<h1 class="text-center my-5">Liste des films</h1>
+<h1 class="text-center mt-4 mb-5">Liste des films</h1>
 
 
 <div class="text-center">
-  <% if @user.join_user_movies.count == Movie.all.count %>
+  <% if current_or_guest_user.join_user_movies.count == Movie.all.count %>
     <h1><%= "Bravo tu as tout trouvé ! Tu es un(e) super cinéfile " %></h1>
   <% else %>
-    <h3 class="text-center my-5"><i class="far fa-star"></i> Film(s) Trouvé(s) : <%= @user.join_user_movies.count %> / <%= Movie.all.count %></h3>
+    <h3 class="text-center mt-5"><i class="far fa-star"></i> Film(s) Trouvé(s) : <%= current_or_guest_user.join_user_movies.count %> / <%= Movie.all.count %></h3>
   <% end %>
+
+  <%= "Inscrivez-vous pour sauvegarder votre progression ou proposer un nouveau rébus" unless user_signed_in? %>
 </div>
 
-<table class="table">
+<table class="table mt-5">
   <thead>
     <tr>
       <th></th>
@@ -18,18 +20,20 @@
     </tr>
   </thead>
   <tbody>
-    <% @movies.each do |movie| %>
-      <tr>
-        <td><%= link_to "Répondre", movie_path(movie.id) unless @user.join_user_movies.find_by(movie_id: movie.id) != nil %></td>
-        <td><%= movie.emojis %></td>
-        <td>
-          <% if @user.join_user_movies.find_by(movie_id: movie.id) != nil %> 
-            <b><i class="far fa-star"></i> <%= movie.answer %></b> 
-          <% else %>
-            <%= "Pas encore trouvé" %>
-          <% end %>
-        </td>
-      </tr>
+    <% @movies.sort_by(&:created_at).each do |movie| %>
+      <% if movie.is_validated %>
+        <tr>
+          <td><%= link_to "Répondre", movie_path(movie.id) unless current_or_guest_user.join_user_movies.find_by(movie_id: movie.id) != nil %></td>
+          <td><%= movie.emojis %></td>
+          <td>
+            <% if current_or_guest_user.join_user_movies.find_by(movie_id: movie.id) != nil %> 
+              <b><i class="far fa-star"></i> <%= movie.answer %></b> 
+            <% else %>
+              <%= "Pas encore trouvé" %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>

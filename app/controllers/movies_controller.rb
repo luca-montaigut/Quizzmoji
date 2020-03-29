@@ -1,5 +1,9 @@
 class MoviesController < ApplicationController
 
+  def new
+    @movie = Movie.new
+  end
+
   def index
     @movies = Movie.all
   end
@@ -16,7 +20,7 @@ class MoviesController < ApplicationController
     else      
       if params[:user_answer].normalize == @movie.answer.normalize
         @result = "Bravo ! Effectivement c'était bien :"
-        JoinUserMovie.create(user_id: @user.id, movie_id: @movie.id)
+        JoinUserMovie.create(user_id: current_or_guest_user.id, movie_id: @movie.id)
       else
         @result = "Faux, retente ta chance !"
       end

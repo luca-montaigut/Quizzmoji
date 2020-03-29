@@ -71,3 +71,4 @@ group :development do
 end
 
 gem 'table_print'
+gem 'devise-guests'

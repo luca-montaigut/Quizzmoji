@@ -6,3 +6,4 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Movie.create(emojis: " 🚶 🏃 ✈️ ", answer: "Attrape moi si tu veux" )

@@ -1,0 +1,26 @@
+<%= form_with(model: [:admin, admin_movie], local: true) do |form| %>
+  <% if admin_movie.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(admin_movie.errors.count, "error") %> prohibited this admin_movie from being saved:</h2>
+
+      <ul>
+      <% admin_movie.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<br>
+  <%= form.label :emojis, "Emojis" %>
+  <%= form.text_field :emojis, class:"form-control" %>
+<br>
+  <%= form.label :answer, "Réponse" %>
+  <%= form.text_field :answer, class:"form-control" %>
+<br>
+  <%= form.label :is_validated, "Validé ?" %>
+  <%= form.check_box :is_validated %>   
+<br><br>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
