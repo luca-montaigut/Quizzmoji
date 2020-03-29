@@ -1,24 +1,18 @@
-# README
+# [Quizzmoji](http://quizzmoji.herokuapp.com/)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Jeu : Trouverez-vous les films exprimés en emojis ? 
 
-Things you may want to cover:
+Relevez le défi sur : http://quizzmoji.herokuapp.com/
 
-* Ruby version
+![Image of site](https://i.imgur.com/PMU59qe.gif)
 
-* System dependencies
+## 🐰 Auteur
+Luca Montaigut : https://github.com/luca-montaigut
 
-* Configuration
+### Remerciements
 
-* Database creation
+Anthony Amar : 
 
-* Database initialization
+Maxime Souillat :
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Lucien Passera : https://github.com/Crysicia
