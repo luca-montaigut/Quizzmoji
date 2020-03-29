@@ -2,7 +2,7 @@
   <h1 class="text-center"><%= @result %></h1>
   <% if @result == "Faux, retente ta chance !" %>
     <div class="text-center">
-      <%= link_to "Réessayer", movie_path(@movie.id), class:"ml-5 btn btn-danger" %>
+      <%= link_to "Réessayer", movie_path(@movie.id), class:"btn btn-danger" %>
     </div>
   <% else %>
     <br>
@@ -14,5 +14,5 @@
 
 <div class="text-center mt-5">
   <%= link_to "« Retour à l'accueil", movies_path, class:"btn btn-info" %>
-  <%= link_to "Voir un autre film »", movie_path(Movie.all.where(is_validated: true).sample.id), class:"btn btn-success" %>
+  <%= link_to "Voir un autre film »", movie_path(Movie.in_game.only_non_answered(current_or_guest_user).sample.id), class:"btn btn-success" %>
 </div>

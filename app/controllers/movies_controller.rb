@@ -6,7 +6,7 @@ class MoviesController < ApplicationController
   end
 
   def index
-    @movies = Movie.all
+    @movies = Movie.in_game
   end
 
   def show

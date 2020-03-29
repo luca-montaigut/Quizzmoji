@@ -6,6 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+JoinUserMovie.destroy_all
+Movie.destroy_all
+User.destroy_all
+
+
 Movie.create(is_validated: true, emojis: "🔕 🐏 🐏 🐏 ", answer: "Le silence des agneaux" )
 Movie.create(is_validated: true, emojis: "👦 👧 🌂 👜 🇬🇧", answer: "Mary Poppins" )
 Movie.create(is_validated: true, emojis: "👨 💬 🐴 ", answer: "L'homme qui murmurait à l'oreille des chevaux" )
