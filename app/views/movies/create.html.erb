@@ -13,6 +13,6 @@
 <hr>
 
 <div class="text-center mt-5">
-  <%= link_to "« Retour à l'accueil", movies_path, class:"btn btn-info" %>
+  <%= link_to "« Retour à la liste des films", movies_path, class:"btn btn-info" %>
   <%= link_to "Voir un autre film »", movie_path(Movie.in_game.only_non_answered(current_or_guest_user).sample.id), class:"btn btn-success" %>
 </div>

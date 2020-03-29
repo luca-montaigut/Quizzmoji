@@ -9,9 +9,13 @@
     <%= f.text_field :user_answer, required: true, autofocus: true, class: "form-control", placeholder: "Votre réponse" %>
   </div>
 
-  <div class="actions mt-5 mb-3 text-center">
+  <div class="actions my-5 mb-3 text-center">
     <%= submit_tag "Répondre",class: "btn btn-lg btn-dark" %>
   </div>
+  <hr>
+    <div class="mt-5 mb-3 text-center">
+      <%= link_to "« Retour à la liste des films", movies_path, class:"btn btn-info" %>
+    </div>
 <% end %>
 
 
