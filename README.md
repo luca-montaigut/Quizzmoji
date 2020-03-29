@@ -13,6 +13,6 @@ Luca Montaigut : https://github.com/luca-montaigut
 
 Anthony Amar : 
 
-Maxime Souillat :
+Maxime Souillat : https://github.com/beaucouplus
 
 Lucien Passera : https://github.com/Crysicia
