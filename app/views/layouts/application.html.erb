@@ -12,16 +12,44 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/e5ab504795.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
+
     <div class="container">
       <%= yield %>
     </div>
 
-    <footer class="text-center">
-      <p>Basé sur le <%= link_to "post Facebook d'Allociné", "https://www.facebook.com/allocine/posts/10158195475840148%"%> du 25 mars 2020 </p>
+    <footer class="footer d-flex align-items-center">
+      <div class="col-1 pl-lg-5"></div>
+      <div class="col-10 text-center">
+        <span>Fait avec <i class="fas fa-heart"></i> par <a href="https://github.com/luca-montaigut">Luca Montaigut</a></span> |
+        <span>Contact : <a href="mailto:lmontaigut@gmail.com">lmontaigut@gmail.com</a></span>
+        <p>Basé sur le <%= link_to "post Facebook d'Allociné", "https://www.facebook.com/allocine/posts/10158195475840148%"%> du 25 mars 2020 </p>
+      </div>
+      <div class="col-1 pb-3"><%= image_tag "lazyrabbit.svg", height: 75 %></div>
     </footer>
     
   </body>
 </html>
+
+
+<style>
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 15vh; 
+  background-color: #f5f5f5;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #f5f5f5;
+}
+
+</style>

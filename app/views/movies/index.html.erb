@@ -5,24 +5,30 @@
   <% if @user.join_user_movies.count == Movie.all.count %>
     <h1><%= "Bravo tu as tout trouvé ! Tu es un(e) super cinéfile " %></h1>
   <% else %>
-    <h3 class="text-center my-5">Trouvé : <%= @user.join_user_movies.count %> / <%= Movie.all.count %></h3>
+    <h3 class="text-center my-5"><i class="far fa-star"></i> Film(s) Trouvé(s) : <%= @user.join_user_movies.count %> / <%= Movie.all.count %></h3>
   <% end %>
 </div>
 
 <table class="table">
   <thead>
     <tr>
-      <th>Films</th>
-      <th>Répondre</th>
-      <th>Votre réponse</th>
+      <th></th>
+      <th>Film à trouver</th>
+      <th>Réponse</th>
     </tr>
   </thead>
   <tbody>
     <% @movies.each do |movie| %>
       <tr>
+        <td><%= link_to "Répondre", movie_path(movie.id) unless @user.join_user_movies.find_by(movie_id: movie.id) != nil %></td>
         <td><%= movie.emojis %></td>
-        <td><%= link_to "Répondre", movie_path(movie.id) %></td>
-        <td><%= @user.join_user_movies.find_by(movie_id: movie.id) != nil ? "Trouvé" : "Pas encore trouvé" %></td>
+        <td>
+          <% if @user.join_user_movies.find_by(movie_id: movie.id) != nil %> 
+            <b><i class="far fa-star"></i> <%= movie.answer %></b> 
+          <% else %>
+            <%= "Pas encore trouvé" %>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
