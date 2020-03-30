@@ -11,7 +11,7 @@ Luca Montaigut : https://github.com/luca-montaigut
 
 ### Remerciements
 
-Anthony Amar : 
+Anthony Amar : https://github.com/anthonyamar/
 
 Maxime Souillat : https://github.com/beaucouplus
 
